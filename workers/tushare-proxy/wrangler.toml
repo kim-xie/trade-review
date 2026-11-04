@@ -1,0 +1,9 @@
+name = "tushare-proxy"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+# 不开启日志采集（observability 默认关闭）；代码本身不打印任何请求内容。
+
+[vars]
+# 逗号分隔的允许来源，部署前改成你的站点地址
+ALLOWED_ORIGINS = "http://localhost:3000"
+RATE_PER_MIN = "60"

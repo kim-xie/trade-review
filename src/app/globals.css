@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #020617; /* slate-950 */
+  color: #e2e8f0; /* slate-200 */
+}
+
+/* 纯 CSS 网格 + 光晕背景（落地页 hero），不使用图片以保证 LCP */
+.hero-grid {
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(34, 211, 238, 0.16), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #22d3ee, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A 股习惯：盈利红、亏损绿 */
+.pnl-up { color: #f87171; }
+.pnl-down { color: #34d399; }
